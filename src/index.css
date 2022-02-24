@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+* {padding:0;margin:0;font-size:inherit;font-weight:inherit;box-sizing:border-box;color:inherit;}
+ul,ol,li,dl,dt,dd {list-style:none;}
+a {text-decoration:none;}
+img {vertical-align:middle;}
+input,button,select,option {background:transparent;outline:none;border:none;}
+body {color:#333;font-family:'Noto Sans KR', sans-serif;line-height:1;}
+
+
+.top_banner {background:#f2f2f2;overflow:hidden;height:122px;transition:0.5s;}
+.top_banner.on {height:0;}
+.top_banner .container {width:1200px;margin:0 auto;padding:30px 15px;position:relative;}
+
+.top_banner h2 {font-size:30px;font-weight:700;margin-bottom:10px;font-family: 'Nanum Myeongjo', serif;}
+.top_banner p {font-size:14px;font-weight:300;line-height:1.2;}
+.top_banner a {display:inline-block;border:1px solid #333;padding:0 15px;line-height:20px;margin-left:20px;}
+.top_banner i {position:absolute;top:30px;right:15px;} 
+
+
+header {border-bottom:1px solid #ddd;}
+header .container {display:flex;width:1200px;margin:0 auto;line-height:100px;}
+header .container>* {padding:0 15px;}
+header nav {margin-left:auto;}
+header nav>ul {display:flex;}
+header nav>ul>li>a {padding:0 20px;}
+header nav>ul>li {position:relative;}
+header nav>ul>li~li:after {content:"";display:block;width:1px;height:12px;background:#333;position:absolute;top:50%;left:0;transform:translateY(-50%)}
+
+header #search input {border-bottom:1px solid #333;padding:4px 0;}
+header #search button {font-size:30px;}
+
+.mopen {display:none;position:fixed;top:30px;right:30px;width:30px;height:30px;}
+.mopen>span {display:block;position:absolute;top:0;left:0;width:100%;height:2px;background:#666;transition:0.4s;}
+.mopen>span:nth-child(1) {top:0;}
+.mopen>span:nth-child(2) {top:10px;}
+.mopen>span:nth-child(3) {top:10px;}
+.mopen>span:nth-child(4) {top:20px;}
+
+
+.main_slider img {width:100%;}
+.main_slider figure {height:600px;}
+.main_slider .item01 {background:url(./img/mainvisual01.jpg) no-repeat center center/cover}
+.main_slider .item02 {background:url(./img/mainvisual02.jpg) no-repeat center center/cover}
+.main_slider .item03 {background:url(./img/mainvisual03.jpg) no-repeat center center/cover}
+.main_slider figure .txt {width:1200px;margin:0 auto;padding:200px 15px 0 15px;color:#f2f2f2;}
+
+
+.main_slider figure .txt h3 {font-size:60px;font-weight:900;text-shadow:0 0 3px #333;margin-bottom:20px;opacity:0;transform:translateY(100px);}
+.main_slider figure.on .txt h3 {opacity:1;transform:translateY(0);transition:0.5s 0.5s;}
+.main_slider figure .txt p {font-size:14px;font-weight:300;text-shadow:0 0 1px #333;margin-bottom:20px;opacity:0;transform:translateY(100px);}
+.main_slider figure.on .txt p {opacity:1;transform:translateY(0);transition:0.5s 1s;}
+.main_slider figure .txt a {display:inline-block;width:150px;height:40px;line-height:38px;text-align:center;border:1px solid #333;background:#333;opacity:0;transform:translateY(100px);}
+.main_slider figure.on .txt a {opacity:1;transform:translateY(0);transition:0.5s 1.5s;}
+.main_slider figure.on .txt a:hover {background:#f2f2f2;color:#333;border:1px solid #f00;transition:0.3s;}
+.main_slider figure.item02 .txt {text-align:right;}
+
+
+.main_slider .slick-dots {position:absolute;bottom:100px;left:0;width:100%;text-align:center;}
+.main_slider .slick-dots li {display:inline-block;width:100px;height:5px;background:#f00;margin:0 4px;}
+.main_slider .slick-dots li.slick-active {background:#333;}
+.main_slider .slick-dots li button {display:none;}
+
+#content01 {padding:100px 0;text-align:center;}
+#content01 h2 {font-size:20px;font-weight:100;margin-bottom:10px;letter-spacing:0.5em;}
+#content01 p {font-size:14px;font-weight:300;margin-bottom:30px;letter-spacing:-0.025em;}
+
+#content01 .container {display:flex;width:1200px;margin:0 auto;}
+#content01 .container figure {flex:1;padding:0 15px;}
+#content01 .container figure .case {overflow:hidden;margin-bottom:20px;}
+#content01 .container figure img {width:100%;transition:0.5s;}
+#content01 .container figure img:hover {transform:scale(1.5)}
+
+#content01 .container figure strong {display:block;margin-bottom:20px;}
+#content01 .container figure a {display:inline-block;border:1px solid #666;line-height:30px;padding:0 30px;}
+#content01 .container figure a:hover {background:#f00;color:#f2f2f2;}
