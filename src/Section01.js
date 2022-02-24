@@ -1,21 +1,29 @@
+
+
 function Section01() {
     const detail = [
         {
-            index: 1,
             imageUrl: './img/lesedilarona01.jpg',
             text: '스톤 그리고 색상들을 멋진 조합'
         },
         {
-            index: 2,
             imageUrl: './img/lesedilarona02.jpg',
             text: '스톤 그리고 색상들을 멋진 조합'
         },
         {
-            index: 3,
             imageUrl: './img/lesedilarona03.jpg',
             text: '스톤 그리고 색상들을 멋진 조합'
         }
     ];
+
+  
+    const numIdx = (i) => {
+        console.log(i);
+        const ALLFIGURE = document.querySelectorAll('#content01 figure');
+        ALLFIGURE.forEach(el=>el.classList.remove('on'));
+        ALLFIGURE[i].classList.add('on')
+
+    }
 
     const detailBox = detail.map((el, idx) => (
         <figure key={idx}>
@@ -23,7 +31,7 @@ function Section01() {
                 <img src={el.imageUrl} alt="" />
             </div>
             <strong>{el.text}</strong>
-            <a href="#!" onClick={()=>console.log(idx)}>구매하기</a>
+            <a href="#!" onClick={()=>numIdx(idx)}>구매하기</a>
         </figure>
     )
     );
