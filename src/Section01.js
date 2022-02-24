@@ -3,53 +3,56 @@ import React, { useRef, useEffect, useState } from "react";
 function Section01() {
     const detail = [
         {
+            id:1,
             imageUrl: './img/lesedilarona01.jpg',
-            text: '스톤 그리고 색상들을 멋진 조합'
+            txt: '스톤 그리고 색상들을 멋진 조합'
         },
         {
+            id:2,
             imageUrl: './img/lesedilarona02.jpg',
-            text: '스톤 그리고 색상들을 멋진 조합'
+            txt: '스톤 그리고 색상들을 멋진 조합'
         },
         {
+            id:3,
             imageUrl: './img/lesedilarona03.jpg',
-            text: '스톤 그리고 색상들을 멋진 조합'
+            txt: '스톤 그리고 색상들을 멋진 조합'
         }
     ];
 
 
     let containerRef = useRef(null);
-    const [title, setTitle] = useState("");
+    const [tabItem, setTab] = useState(null);
   
     const myEvent = (idx) => {
-      console.log([...title],idx);
-      let cur = [...title];
-      cur.map(el => el.classList.remove('on'));
-      cur[idx].classList.add('on')
+      console.log([...tabItem],idx);
+      const tabItems = [...tabItem];
+      tabItems.map(el => el.classList.remove('on'));
+      tabItems[idx].classList.add('on')
     };
   
     useEffect(() => {
-      setTitle(containerRef.current.children);
+        setTab(containerRef.current.children);
     }, []);
 
 
-    const numIdx = (i) => {
-        //const [navOpened, setNavOpened] = useState(false);
-        //const navClassNames = navOpened ? "nav-links nav-active" : "nav-links";
-        //console.log(i,nameInput.current,detailBox,containerRef.current.children[0].type);
-        const ALLFIGURE = document.querySelectorAll('#content01 figure');
-        [...ALLFIGURE].map(el=>el.classList.remove('on'));
-        [...ALLFIGURE][i].classList.add('on');
+    // const numIdx = (i) => {
+    //     //const [navOpened, setNavOpened] = useState(false);
+    //     //const navClassNames = navOpened ? "nav-links nav-active" : "nav-links";
+    //     //console.log(i,nameInput.current,detailBox,containerRef.current.children[0].type);
+    //     const ALLFIGURE = document.querySelectorAll('#content01 figure');
+    //     [...ALLFIGURE].map(el=>el.classList.remove('on'));
+    //     [...ALLFIGURE][i].classList.add('on');
 
-       console.log([...ALLFIGURE],[...detail],[...detailBox][0])
+    //    console.log([...ALLFIGURE],[...detail],[...detailBox][0])
 
-    }
+    // }
 
     const detailBox = detail.map((el, idx) => (
-        <figure key={idx}>
+        <figure key={el.id}>
             <div className="case">
-                <img src={el.imageUrl} alt="" />
+                <img src={el.imageUrl} alt={el.txt}  />
             </div>
-            <strong>{el.text}</strong>
+            <strong>{el.txt}</strong>
             <a href="#!" onClick={()=>myEvent(idx)}>구매하기</a>
         </figure>
     )
