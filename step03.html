@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>react step02</title>
+    <title>react step03 - 조건문의 사용</title>
 </head>
 
 <body>
@@ -19,21 +19,32 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script type="text/babel">
+    // 구조분해할당 Destructuring assignment
+    const [var01, var02] = [1000, 2000];
+    const var03 = 3000;
+    const var04 = [3000, 4000, 5000, 6000];
+    const var05 = [...var04]; //전개연산자 Spread Opertor
+    var04.push(7000);
+    console.log(var04);
+    console.log(var05);
     const ele = (
         <div>
-            <h1>이잼민</h1>
+            <h1>이잼민 {var01}</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, tempora?</p>
         </div>
     );
     // document.creatElement('div')
     const doc02 = (
         <div>
-            {/* 주석 처리 */}
             {ele}
-            {console.log(ele)}
+            {/* jsx 내부에는 if문을 사용할 수 없음 -- 삼항연산자 사용*/}
+            <span>잼민이는 </span> {var03 ? var03 : null} 살 아이
+            <ul>
+                {var05.map(el => <li key={el}>{el}</li>)}
+            </ul>
         </div>
     )
-
+    console.log(var04);
     const 타겟 = document.querySelector('#app');
     ReactDOM.render(doc02, 타겟);
 </script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react step04 - 글자를 한자 한자 잘라서 애니메이션을 줘보자...</title>
+    <style>
+        span {
+            display: inline-block;
+        }
+
+        span.on {
+
+            color: #f00;
+            transform: translateY(100px);
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+</body>
+
+
+<!-- 리액트도 javascript 라이버러리 당연히 cdn 황경에서 쓸 수 있음 -->
+<!-- https://ko.reactjs.org/docs/add-react-to-a-website.html f리액트 홈페이지 참조 -->
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+    const 글자들 = "언제나 즐거운 잼민이";
+    const 한자한자 = [...글자들];
+    console.log(한자한자)
+
+    const main = (
+        <div>
+            {
+                한자한자.map(
+                    (el, idx) => <span key={idx}>{el}</span>
+                )
+            }
+        </div>
+    );
+
+    const span = document.querySelectorAll('span');
+    console.log(span) //span은 어디에 있을까???
+
+    const 타겟 = document.querySelector('#app');
+    console.log(span) //span은 어디에 있을까???
+    ReactDOM.render(main, 타겟);
+    console.log(span) //span은 어디에 있을까???
+
+
+    const SPAN = document.querySelectorAll('span');
+    console.log(SPAN) //span은 어디에 있을까???
+    const ALL_SPAN = [...SPAN];
+    console.log(ALL_SPAN) //span은 어디에 있을까???
+    ALL_SPAN.forEach(
+        (el, idx) => {
+            setTimeout(
+                () => el.classList.add('on'), 400 * idx
+            )
+        }
+    )
+
+
+
+
+</script>
+
+</html>
