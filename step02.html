@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>react step01</title>
+    <title>react step02</title>
 </head>
 
 <body>
@@ -19,10 +19,22 @@
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script type="text/babel">
-    const 내용 = <h1>이잼민</h1>
-    const 타겟 = document.querySelector('#app');
+    const ele = (
+        <div>
+            <h1>이잼민</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, tempora?</p>
+        </div>
+    );
 
-    ReactDOM.render(내용, 타겟);
+    const doc02 = (
+        <div>
+            {ele}
+            {console.log(ele)}
+        </div>
+    )
+
+    const 타겟 = document.querySelector('#app');
+    ReactDOM.render(doc02, 타겟);
 </script>
 
 </html>
